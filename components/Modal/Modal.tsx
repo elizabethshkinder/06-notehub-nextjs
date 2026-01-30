@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import css from "./Modal.module.css";
 
@@ -8,8 +8,6 @@ interface ModalProps {
   onClose: () => void;
   children: React.ReactNode;
 }
-
-const modalRoot = document.body;
 
 export default function Modal({ children, onClose }: ModalProps) {
   function handleBackdropClick(event: React.MouseEvent<HTMLDivElement>) {
@@ -43,6 +41,6 @@ export default function Modal({ children, onClose }: ModalProps) {
     >
       <div className={css.modal}>{children}</div>
     </div>,
-    modalRoot
+    document.body
   );
 }
