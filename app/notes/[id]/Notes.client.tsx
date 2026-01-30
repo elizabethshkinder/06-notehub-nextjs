@@ -1,6 +1,6 @@
 "use client"
 
-import css from "./Notes.client.module.css"
+import css from "./NotesPage.module.css"
 import { useState } from "react";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useDebounce } from "use-debounce";
