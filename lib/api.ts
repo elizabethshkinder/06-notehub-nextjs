@@ -29,6 +29,12 @@ export async function fetchNotes(
   });
   return data;
 }
+
+export async function fetchNoteById(id: string): Promise<Note> {
+  const { data } = await noteApi.get<Note>(`/notes/${id}`);
+  return data;
+}
+
 export async function createNote(newNote: NoteFormValues): Promise<Note> {
   const { data } = await noteApi.post<Note>('/notes', newNote);
   return data;

@@ -1,17 +1,9 @@
 "use client";
 
-import css from './NotesPage.module.css';
-
-type ErrorProps = {
+type Props = {
   error: Error;
 };
 
-export default function Error({ error }: ErrorProps) {
-  return (
-    <div className={css.container}>
-      <p className={css.content}>
-        Could not fetch the list of notes. {error.message}
-      </p>
-    </div>
-  );
-}
+export default function Error({ error }: Props) {
+  return <p>Could not fetch note details. {error.message}</p>;
+};
