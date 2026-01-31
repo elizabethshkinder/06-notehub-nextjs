@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import css from "./NoteList.module.css";
 
 import { useState } from "react";
@@ -35,6 +37,10 @@ export default function NoteList({ notes }: NoteListProps) {
 
           <div className={css.footer}>
             <span className={css.tag}>{tag}</span>
+            
+            <Link href={`/notes/${id}`} className={css.link}>
+            View details
+            </Link>
 
             <button
               type="button"
